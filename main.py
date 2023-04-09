@@ -449,7 +449,7 @@ async def test(ctx):
     await ctx.send('test working poggies pogchamp')
 
 
-@client.command(aliases=['tetris', 'start', 'play', 'playtetris'])
+@client.command(aliases=['tetris', 'start', 'play'])
 async def _start(ctx):  # Starts embed
     await reset_game()
     embed = discord.Embed(title='Tetris in Discord',
