@@ -79,32 +79,6 @@ class interaction_cog(commands.Cog):
         embed.set_footer(text='Made by Arihant')
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['dog', 'doggy', 'doggo', 'puppy', 'pup'])
-    async def _dog(self, ctx):
-        r = requests.get("https://dog.ceo/api/breeds/image/random")
-        res = r.json()
-        em = discord.Embed()
-        em.set_image(url=res['message'])
-        await ctx.send(embed=em)
-
-    @commands.command(aliases=['wouldyourather', 'wyr'])
-    async def _wyr(self, ctx):
-        r = requests.get("https://api.truthordarebot.xyz/v1/wyr")
-        res = r.json()
-        await ctx.send(res['question'])
-
-    @commands.command(aliases=['truth'])
-    async def _truth(self, ctx):
-        r = requests.get("https://api.truthordarebot.xyz/v1/truth")
-        res = r.json()
-        await ctx.send(res['question'])
-
-    @commands.command(aliases=['dare'])
-    async def _dare(self, ctx):
-        r = requests.get("https://api.truthordarebot.xyz/v1/dare")
-        res = r.json()
-        await ctx.send(res['question'])
-
 
 async def setup(bot):
     await bot.add_cog(interaction_cog(bot))
